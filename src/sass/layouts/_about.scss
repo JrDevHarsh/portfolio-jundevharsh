@@ -1,0 +1,106 @@
+.about__section {
+    padding: 10rem 2rem;
+    counter-increment: item;
+    background-color: $orange_dark;
+
+    .container {
+        max-width: 75rem;
+        width: 100%;
+        margin-inline: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+
+        .left__box {
+            width: 50%;
+            text-align: center;
+
+            img {
+                max-width: 30rem;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .right__box {
+            width: 50%;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            background-color: $black_bg;
+
+            .about__heading {
+                color: $orange_dark;
+                font-size: 2.25rem;
+                margin: 1rem 0;
+
+                &::before {
+                    content: '0' counter(item) '.';
+                    margin-right: 0.5rem;
+                }
+            }
+
+            .about__text {
+                font-size: 1.125rem;
+                color: $white_light;
+
+                .colored {
+                    color: $orange_dark;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .social__menu {
+                display: flex;
+                align-items: center;
+                margin-top: 2rem;
+
+                .social__item {
+                    margin: 0 1rem;
+
+                    a {
+                        svg {
+                            path {
+                                fill: $white_light;
+                            }
+                        }
+
+                        &:hover {
+                            svg {
+                                path {
+                                    fill: $white_dark;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 60.5rem) {
+        .container {
+            width: 75%;
+            flex-direction: column;
+
+
+            .left__box {
+                width: 50%;
+            }
+
+            .right__box {
+                width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 48rem) {
+        .container {
+            width: 100%;
+        }
+    }
+}

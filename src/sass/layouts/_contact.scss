@@ -1,0 +1,45 @@
+.contact__section {
+    padding: 10rem 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1rem;
+    counter-increment: item;
+
+    .contact__title {
+        color: $orange_dark;
+
+        &::before {
+            margin-right: 0.5rem;
+            color: inherit;
+            content: '0'counter(item) '.';
+        }
+    }
+
+    .contact__text {
+        color: $white_light;
+        width: 50%;
+        text-align: center;
+    }
+
+    .contact__btn {
+        padding: 0.75rem 1.25rem;
+        color: $orange_dark;
+        border: 2px solid $orange_dark;
+        border-radius: 0.5rem;
+        background-color: transparent;
+        transition: background-color 0.3s, color 0.3s;
+
+        &:hover {
+            background-color: $orange_dark;
+            color: $black_bg;
+        }
+    }
+
+    @media (max-width: 48rem) {
+        .contact__text {
+            width: 100%;
+        }
+    }
+}

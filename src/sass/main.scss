@@ -1,0 +1,11 @@
+// Import variables
+@import "./abstracts/variables";
+
+// reset folder
+@import "./base/reset", "./base/typography";
+
+// Import logo
+@import "./components/logo";
+
+// layout folder
+@import "./layouts/header", "./layouts/headerIntro", "./layouts/about", "./layouts/project", "./layouts/service", "./layouts/contact", "./layouts/skills";

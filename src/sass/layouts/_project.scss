@@ -1,0 +1,132 @@
+.projects__section {
+    padding: 10rem 2rem;
+    counter-increment: item;
+
+    .projects__title {
+        font-size: 2.25rem;
+        color: $pink_dark;
+        text-align: center;
+
+        &::before {
+            color: inherit;
+            content: '0'counter(item) '.';
+            margin-right: 0.5rem;
+        }
+    }
+
+    .project {
+        max-width: 75rem;
+        margin-inline: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: normal;
+        min-height: 30rem;
+        border-radius: 0.25rem;
+        gap: 1rem;
+
+        &:nth-child(2n + 1) {
+            flex-direction: row-reverse;
+
+            .project__img {
+                justify-content: flex-start;
+            }
+        }
+
+        .project__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: normal;
+            flex-basis: 101%;
+
+            .project__title {
+                font-size: 2rem;
+                color: $white_dark;
+            }
+
+            .project__info {
+                color: $black_bg;
+                margin-block: 0.75rem;
+                background-color: $pink_dark;
+                padding: 1rem;
+                border-radius: 0.5rem;
+            }
+
+            .tools__menu {
+                display: flex;
+                align-items: center;
+
+                &_item {
+                    padding-inline: 1rem;
+                    color: $pink_dark;
+                }
+            }
+
+            .row {
+                display: flex;
+                align-items: center;
+                margin-block: 1rem;
+
+                a {
+                    margin-inline: 1rem;
+
+                    svg {
+                        max-width: 1.5rem;
+                        height: auto;
+                        width: 100%;
+
+                        path {
+                            fill: $white_light;
+                            transition: fill 0.3s;
+                        }
+
+                        &:hover path {
+                            fill: $white_dark;
+                        }
+                    }
+                }
+            }
+        }
+
+        .project__img {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            flex-basis: 99%;
+
+            img {
+                max-width: 33.875rem;
+                width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 60.5rem) {
+        .project {
+            margin-top: 2rem;
+            width: 75%;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 2rem;
+            background: #1b1a21;
+            padding: 2rem;
+            border-radius: 0.5rem;
+
+            &:nth-child(2n + 1) {
+                flex-direction: column-reverse;
+            }
+
+            img {
+                border-radius: 0.5rem;
+            }
+        }
+    }
+
+    @media (max-width: 48rem) {
+        .project {
+            width: 100%;
+        }
+    }
+}
